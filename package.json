@@ -27,9 +27,7 @@
 					"default":"Joe Bloggs"
 				}
 			]
-		}
-	],
-	[
+		},
 		{
 			"name":"Trigger Handler Test Class",
 			"file_name":"TriggerHandlerTest.cls",
