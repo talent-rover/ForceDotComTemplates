@@ -1,6 +1,23 @@
 {
 	"ApexClass":[
 		{
+			"name":"Default",
+			"file_name":"ApexClass.cls",
+			"description":"Default Apex class template.",
+			"author":"Davin Casey",
+			"params":[
+				{
+					"name":"api_name",
+					"description":"Apex Class API Name (Apex Trigger API name + 'TriggerHandler')",
+					"default":"ClosingReportTriggerHandler"
+				},
+				{
+					"name":"author",
+					"description":"Your Name",
+					"default":"Joe Bloggs"
+				}
+		},
+		{
 			"name":"Trigger Handler",
 			"file_name":"TriggerHandler.cls",
 			"description":"Apex Trigger Handler which complies with Talent Rover coding standards.",
