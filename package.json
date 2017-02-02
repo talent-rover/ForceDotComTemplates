@@ -16,6 +16,7 @@
 					"description":"Your Name",
 					"default":"Joe Bloggs"
 				}
+			]
 		},
 		{
 			"name":"Trigger Handler",
