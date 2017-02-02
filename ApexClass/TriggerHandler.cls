@@ -39,7 +39,23 @@ public with sharing class {{ trigger_name }}TriggerHandler {
 	* @throws
 	* @deprecated	False
 	*/
-	private {{ trigger_name }}TriggerHandler () {}
+	private {{ trigger_name }}TriggerHandler () {
+
+		// Check if TriggerManager exists, as TRBO might not be installed in this org.
+		if (Type.forName('TriggerManager__c') != null || Type.forName('TRBO__TriggerManager__c') != null) {
+
+			// Check if an instance of TriggerManager__c exists for this class
+			TriggerManager__c managerInstance = TriggerManager__c.getInstance(
+				String.valueOf(this).substring(0,String.valueOf(this).indexOf(':'))
+			);
+
+			// If we find an instance and it is set to inactive, then trip the executing flags which will prevent any logic from firing.
+			if (managerInstance != null && !managerInstance.Active__c) {
+
+				isBeforeExecuting = isAfterExecuting = true;
+			}
+		}
+	}
 
 	/*
 	* @description	This is the method which actually 'fires' the trigger logic. This method contains the trigger action
