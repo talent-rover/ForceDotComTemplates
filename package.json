@@ -8,8 +8,8 @@
 			"params":[
 				{
 					"name":"api_name",
-					"description":"Apex Class API Name (Apex Trigger API name + 'TriggerHandler')",
-					"default":"ClosingReportTriggerHandler"
+					"description":"Apex Class API Name",
+					"default":"MyApexClass"
 				},
 				{
 					"name":"author",
